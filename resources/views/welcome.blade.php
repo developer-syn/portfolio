@@ -353,7 +353,7 @@
             <section class="resume" id="resume">
                 <div class="section-heading">
                     <h2>Developer CV</h2>
-                    <a class="resume-action" href="mailto:hello@example.com?subject=Request%20for%20CV">Request full CV</a>
+                    <a class="resume-action" href="mailto:syki0227@gmail.com?subject=Request%20for%20CV">Request full CV</a>
                 </div>
                 <div class="resume-grid">
                     <div>
