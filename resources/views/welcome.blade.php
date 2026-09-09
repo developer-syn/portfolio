@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dev-Syn is a website developer creating fast, accessible digital experiences.">
     <title>Dev-Syn | Website Developer</title>
+
+    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
-<style>
+<!-- <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
     :root {
@@ -289,7 +292,8 @@
         .section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
         .footer-inner { align-items: flex-start; flex-direction: column; }
     }
-</style>
+</style> -->
+
 <body>
     <div class="page">
         <header class="nav-bar">
@@ -326,15 +330,21 @@
                 </div>
                 <div class="projects">
                     <article class="project">
-                        <div><span class="project-type">Laravel / Full stack</span><h3>Field Notes Studio</h3></div>
+                        <div><span class="project-type">Laravel / Full stack</span>
+                            <h3>Field Notes Studio</h3>
+                        </div>
                         <a class="project-link" href="#contact" aria-label="View Field Notes Studio project">↗</a>
                     </article>
                     <article class="project">
-                        <div><span class="project-type">React / Front end</span><h3>Common Ground</h3></div>
+                        <div><span class="project-type">React / Front end</span>
+                            <h3>Common Ground</h3>
+                        </div>
                         <a class="project-link" href="#contact" aria-label="View Common Ground project">↗</a>
                     </article>
                     <article class="project">
-                        <div><span class="project-type">WordPress / CMS</span><h3>Small Hours</h3></div>
+                        <div><span class="project-type">WordPress / CMS</span>
+                            <h3>Small Hours</h3>
+                        </div>
                         <a class="project-link" href="#contact" aria-label="View Small Hours project">↗</a>
                     </article>
                 </div>
@@ -363,12 +373,12 @@
                             <span class="resume-date">Core toolkit</span>
                             <h3>Tools I work with</h3>
                             <div class="skill-list">
-                                <span>HTML / CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span><span>React</span><span>MySQL</span><span>Git</span><span>Figma</span>
+                                <span>HTML / CSS</span><span>JavaScript</span><span>SQLite</span><span>PHP</span><span>Laravel</span><span>React</span><span>MySQL</span><span>Git</span><span>Figma</span><span>ChatGPT</span><span>Copilot</span><span>Claude</span><span>Gemini</span>
                             </div>
                         </article>
                         <article class="resume-block">
                             <span class="resume-date">Education</span>
-                            <h3>BSc Computer Science</h3>
+                            <h3>BS Information Technology</h3>
                             <p>Focused on web technologies, human-computer interaction, and software design.</p>
                         </article>
                     </div>
@@ -385,4 +395,5 @@
         </footer>
     </div>
 </body>
+
 </html>
