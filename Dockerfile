@@ -1,26 +1,19 @@
 FROM richarvey/nginx-php-fpm:latest
 
-# Set working directory
-WORKDIR /var/www/html
-
-# Copy application files
+# Copy application code
 COPY . /var/www/html
 
-# Set environment variables
+# Set working directory & environment
 ENV WEBROOT /var/www/html/public
 ENV PHP_ERRORS_STDERR 1
 ENV RUN_SCRIPTS 1
 ENV REAL_IP_HEADER 1
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Ensure database directory and file exist with full read/write permissions
-RUN mkdir -p database \
-    && touch database/database.sqlite \
-    && chown -R www-data:www-data storage bootstrap/cache database \
-    && chmod -R 775 storage bootstrap/cache database \
-    && chmod 664 database/database.sqlite
+# Fix permissions for Laravel storage and cache directories
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
+    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 EXPOSE 80
 
-# Run migrations automatically when the container boots, then start Nginx/PHP-FPM
-CMD ["sh", "-c", "php artisan migrate --force && /start.sh"]
+CMD ["/start.sh"]
