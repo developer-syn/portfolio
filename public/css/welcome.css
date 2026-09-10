@@ -245,11 +245,105 @@ h1 em {
 }
 
 .resume-action {
+    padding: 0;
+    border: 0;
+    background: transparent;
     color: var(--ink);
+    cursor: pointer;
     font-size: 0.78rem;
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 4px;
+}
+
+.resume-action:hover,
+.resume-action:focus-visible {
+    color: #849700;
+}
+
+.cv-modal {
+    width: min(720px, calc(100% - 32px));
+    max-height: calc(100% - 32px);
+    padding: 0;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.cv-modal::backdrop {
+    background: rgba(23, 33, 31, 0.72);
+}
+
+.cv-modal-inner {
+    padding: 34px;
+    overflow-y: auto;
+}
+
+.cv-modal-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+
+.cv-modal-heading h2 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+}
+
+.cv-modal-close {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.cv-modal-close:hover,
+.cv-modal-close:focus-visible {
+    background: var(--accent);
+}
+
+.cv-modal-content {
+    display: grid;
+    gap: 28px;
+    padding-top: 28px;
+}
+
+.cv-modal-content section + section {
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+}
+
+.cv-modal-content p {
+    max-width: 590px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.cv-entry + .cv-entry {
+    margin-top: 22px;
+}
+
+.cv-entry h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+}
+
+.cv-entry-meta {
+    color: #849700 !important;
+    font-family: "DM Mono", monospace;
+    font-size: 0.7rem !important;
+    text-transform: uppercase;
 }
 
 .section-heading {
@@ -363,6 +457,9 @@ h2 {
         align-items: flex-start;
         flex-direction: column;
         gap: 8px;
+    }
+    .cv-modal-inner {
+        padding: 24px;
     }
     .footer-inner {
         align-items: flex-start;
