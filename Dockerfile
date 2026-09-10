@@ -20,10 +20,8 @@ RUN mkdir -p database \
     && chmod -R 775 storage bootstrap/cache database \
     && chmod 664 database/database.sqlite
 
-# Configure automatic migrations on startup for richarvey/nginx-php-fpm
-RUN mkdir -p /var/www/html/conf/nginx \
-    && echo "#!/bin/bash\nphp artisan migrate --force\nphp artisan config:cache\nphp artisan route:cache" > /var/www/html/scripts/custom_start.sh \
-    && chmod +x /var/www/html/scripts/custom_start.sh
+# Make custom script executable (richarvey/nginx-php-fpm runs scripts in scripts/ automatically)
+RUN chmod +x /var/www/html/scripts/run.sh
 
 EXPOSE 80
 
