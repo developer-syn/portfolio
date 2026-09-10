@@ -10,9 +10,17 @@ ENV RUN_SCRIPTS 1
 ENV REAL_IP_HEADER 1
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Install Node and build assets
+# Limit Node memory to avoid Render free tier OOM crashes
+ENV NODE_OPTIONS="--max-old-space-size=512"
+
+# 1. Install Node.js and npm
 RUN apk add --no-cache nodejs npm
-RUN npm install --include=dev && npm run build
+
+# 2. Install NPM packages with legacy peer deps fallback
+RUN npm install --include=dev --legacy-peer-deps
+
+# 3. Build front-end assets
+RUN npm run build
 
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
